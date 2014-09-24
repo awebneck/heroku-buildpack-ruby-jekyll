@@ -87,14 +87,23 @@ fi
   npm install --userconfig $build_dir/.npmrc 2>&1 | indent
   PATH=$build_dir/node_modules/.bin:$PATH
   echo `ls -la $build_dir/node_modules`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules/imagemin`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle`
+  echo "\n"
   echo `ls -la $build_dir/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle/vendor`
+  echo "\n"
   echo "BOWER INSTALLING"
   echo `bower --version`
   bower install -VVV
