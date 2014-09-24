@@ -16,4 +16,4 @@ LanguagePack::Instrument.trace 'compile', 'app.compile' do
     end
   end
 end
-`#{File.dirname(__FILE__)}/compile-node`
+`#{File.dirname(__FILE__)}/compile-node #{ARGV[0]} #{ARGV[1]} #{ARGV[2]}`
