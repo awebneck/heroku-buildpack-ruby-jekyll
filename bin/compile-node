@@ -86,6 +86,7 @@ fi
   # Make npm output to STDOUT instead of its default STDERR
   npm install --userconfig $build_dir/.npmrc 2>&1 | indent
   PATH=$build_dir/node_modules/.bin:$PATH
+  echo "BOWER INSTALLING"
   bower install
   echo "GRUNT BUILDING"
   grunt build
