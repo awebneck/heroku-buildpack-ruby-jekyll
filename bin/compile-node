@@ -87,7 +87,7 @@ fi
   npm install --userconfig $build_dir/.npmrc 2>&1 | indent
   PATH=$build_dir/node_modules/.bin:$PATH
   echo "BOWER INSTALLING"
-  bower install
+  bower install -VVV
   echo "GRUNT BUILDING"
   grunt build
 )
