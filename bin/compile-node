@@ -85,11 +85,11 @@ fi
   status "Installing dependencies"
   # Make npm output to STDOUT instead of its default STDERR
   npm install --userconfig $build_dir/.npmrc 2>&1 | indent
+  PATH=$build_dir/node_modules/.bin:$PATH
+  bower install
+  echo "GRUNT BUILDING"
+  grunt build
 )
-PATH=$build_dir/node_modules/.bin:$PATH
-bower install
-echo "GRUNT BUILDING"
-grunt build
 
 # Persist goodies like node-version in the slug
 mkdir -p $build_dir/.heroku
