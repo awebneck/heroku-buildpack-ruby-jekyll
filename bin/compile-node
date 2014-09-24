@@ -88,6 +88,7 @@ fi
 )
 PATH=$build_dir/node_modules/.bin:$PATH
 bower install
+echo "GRUNT BUILDING"
 grunt build
 
 # Persist goodies like node-version in the slug
