@@ -731,9 +731,17 @@ params = CGI.parse(uri.query || "")
 
   def generate_jekyll_site
     puts "Building jekyll site"
-    pipe("env PATH=$PATH bundle exec jekyll --no-server --no-auto 2>&1")
+    pipe("env PATH=$PATH bundle exec npm install 2>&1")
     unless $? == 0
-      error "Failed to generate site with jekyll."
+      error "Failed to install npm packages."
+    end
+    pipe("env PATH=$PATH bundle exec bower install 2>&1")
+    unless $? == 0
+      error "Failed to install bower packages."
+    end
+    pipe("env PATH=$PATH bundle exec grunt build 2>&1")
+    unless $? == 0
+      error "Failed to generate site with grunt and jekyll."
     end
   end
 
