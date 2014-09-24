@@ -96,7 +96,6 @@ class LanguagePack::Ruby < LanguagePack::Base
         create_database_yml
         install_binaries
         run_assets_precompile_rake_task
-        generate_jekyll_site
       end
       super
     end
@@ -726,22 +725,6 @@ params = CGI.parse(uri.query || "")
       else
         precompile_fail(precompile.output)
       end
-    end
-  end
-
-  def generate_jekyll_site
-    puts "Building jekyll site"
-    pipe("env PATH=$PATH bundle exec npm install 2>&1")
-    unless $? == 0
-      error "Failed to install npm packages."
-    end
-    pipe("env PATH=$PATH bundle exec bower install 2>&1")
-    unless $? == 0
-      error "Failed to install bower packages."
-    end
-    pipe("env PATH=$PATH bundle exec grunt build 2>&1")
-    unless $? == 0
-      error "Failed to generate site with grunt and jekyll."
     end
   end
 
